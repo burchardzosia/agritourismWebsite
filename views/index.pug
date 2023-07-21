@@ -1,0 +1,328 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  meta(name='description' content='')
+  meta(name='author' content='Mark Otto, Jacob Thornton, and Bootstrap contributors')
+  meta(name='generator' content='Hugo 0.108.0')
+  title Fixed top navbar example &middot; Bootstrap v5.3
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous')
+  link(rel='canonical' href='https://getbootstrap.com/docs/5.3/examples/navbar-fixed/')
+  link(rel='stylesheet' href='index.css')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+  script(src='script.js')
+  link(href='../assets/dist/css/bootstrap.min.css' rel='stylesheet')
+  style.
+    body{
+    background-image: url("images/pole.jpg");
+    background-size: 2400px 1400px;
+    height: 1900px;
+    }
+    .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    }
+    @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+    }
+    .gridcontainer{
+    display: grid;
+    height:1200px;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 900px 480px 400px;
+    display: grid;
+    margin-top: 100px;
+    }
+    .grid1{
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start:2;
+    grid-column-end:2;
+    background-color: rgb(124, 201, 205);
+    border-radius: 3%;
+    position: absolute;
+    width: 30%;
+    left:0;
+    }
+    .grid2{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start:1;
+    grid-column-end:1;
+    background-color: rgb(124, 201, 205);
+    border-radius: 3%;
+    position: absolute;
+    top:900px;
+    left:0;
+    width:30%;
+    }
+    .grid3{
+    border-radius: 3%;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start:3;
+    grid-column-end:3;
+    background-color: rgb(124, 201, 205);
+    position: absolute;
+    top:900px;
+    width:30%;
+    left:68%;
+    }
+    .grid4{
+    border-radius: 3%;
+    background-color: rgb(124, 201, 205);
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start:2;
+    grid-column-end:2;
+    }
+    }
+    .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+    .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+    }
+    .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+    }
+    .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+    }
+    .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    }
+    #menu{
+    background-color: aqua;
+    }
+    .cow{
+    width:50px;
+    margin-right: 20px;
+    }
+    .footer{
+    background-color: rgb(4, 77, 97);
+    text-align: right;
+    }
+    .end{
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    color: aliceblue;
+    top: 1900px;
+    }
+    .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+    .text{
+    color: black;
+    }
+    .header{
+    font-size: 20px;
+    color: rgb(46, 115, 164);
+    margin-left: 10px;
+    font-weight: 600;
+    }
+    .photo{
+    width: 100%;
+    height:70%;
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3% ;
+    }
+    .photocow{
+    width: 100%;
+    height:60%;
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3% ;
+    }
+    @media (max-width: 768px) {
+    .gridcontainer{
+    height:fit-content;
+    grid-template-columns: 100%;
+    background-color: rgb(124, 201, 205);
+    }
+    body{
+    background-image: url("images/pole.jpg");
+    background-size: 2400px 1400px;
+    height: 2000px;
+    }
+    .end{
+    top:1900px;
+    margin-top: 20px;
+    }
+    }
+  // Custom styles for this template
+  link(href='navbar-fixed.css' rel='stylesheet')
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js' integrity='sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN' crossorigin='anonymous')
+nav#menu.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-info
+  .container-fluid
+    div
+      img.cow(src='images/cow.png' alt='Paris')
+    div
+      main
+        canvas#canvas.logo(width='100' height='50' style='border:1px solid #000000;')
+    a.navbar-brand(href='#') Agroturystyka &quot;Olszyny&quot;
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(href='#' data-bs-toggle='dropdown' aria-expanded='false') Oferta
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='#') Oferta1
+            li
+              a.dropdown-item(href='#') Oferta2
+            li
+              a.dropdown-item(href='#') Oferta3
+        li.nav-item
+          a.nav-link.disabled Zarezerwuj
+.gridcontainer
+  #grid1.grid1
+    img.photocow(src='images/cowImage.jpg' alt='Paris')
+    .header Dost&eogon;pne terminy
+    table.table
+      thead.thead-dark
+        tr
+          th(scope='col') Miesi&aogon;c
+          th(scope='col') Dni
+      tbody
+        tr
+          th(scope='row') VII
+          td 14-21.30-31
+        tr
+          th(scope='row') VII
+          td 1-12
+    .header Formularz:
+    form(method='POST' action='/submit')
+                label(for="name") Imię i nazwisko:
+                input#name(type="text" name="name" required)
+                label(for="room-type") Rodzaj pokoju:
+                select#room-type(name="roomType" required)
+                  option(value="1-osobowy") 1-osobowy
+                  option(value="2-osobowy") 2-osobowy
+                br
+                label(for="room-option") Typ pokoju:
+                select#room-option(name="roomOption" required)
+                  option(value="z-lazienka") Z łazienką
+                  option(value="bez-lazienki") Bez łazienki
+                br
+                label(for="check-in") Data zameldowania:
+                input#check-in(type="date" name="checkIn" required)
+                br
+                label(for="check-out") Data wymeldowania:
+                input#check-out(type="date" name="checkOut" required)
+                br
+                input(type='submit')
+                
+    
+  #grid2.grid2
+    img.photo(src='images/lake.jpg' alt='Paris')
+    .header Ceny Noclegu:
+    ul.header
+      li Pok&oacute;j 1 osobowy-100z&lstrok;
+      li Pok&oacute;j 2 osobowy-200z&lstrok;
+  .grid3
+    img.photo(src='images/domek.jpg' alt='Paris')
+    .header
+      | Adres
+    .header
+      | Olszyny 1007
+    .header
+      | 32-831 Olszyny
+  .grid4
+    .header Widok okolicy
+    iframe(width='100%;' height='80%' src='https://www.youtube.com/embed/Jpmdhwhr2r8' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen='')
+footer.fixed-bottom
+  .footer
+    | &copy;Zofia Burchard
+.end
+  .container
+    .text
+      img.cow(src='images/telephone-call.png' alt='Paris')
+      |  telefon: 698 445 233
+    .text
+      img.cow(src='images/email.png' alt='Paris')
+      |       Email: olszyny@gmail.com
+script.
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.beginPath();
+  ctx.arc(20, 20, 2, 0, 2 * Math.PI);
+  ctx.moveTo(90,10);
+  ctx.lineTo(90,18);
+  ctx.lineTo(40,10);
+  ctx.rect(10, 30, 10, 8);
+  ctx.fill();
+  ctx.closePath();
+  ctx.stroke();
+  var image = document.getElementById("grid1");
+  var image2 = document.getElementById("grid2");
+  image.style.left = "0px";
+  image2.style.left = "0px";
+  var animationTimer;
+  var animationTimer2;
+  var n=2000;
+  var m=3000;
+  function startAnimation() {
+  clearInterval(animationTimer);
+  animationTimer = setInterval(function() {
+  var randomNumber = Math.floor(Math.random() * 2) + 1;
+  if(randomNumber==1){
+  image.style.left = (parseInt(image.style.left) + 550) + "px";
+  setTimeout(function() {
+  image.style.left = (parseInt(image.style.left) - 550) + "px";
+  }, 1000);
+  }
+  if(randomNumber==2){
+  image2.style.left = (parseInt(image2.style.left) + 550) + "px";
+  setTimeout(function() {
+  image2.style.left = (parseInt(image2.style.left) - 550) + "px";
+  }, 1000);
+  }
+  }, n);
+  clearInterval(animationTimer2);
+  animationTimer2 = setInterval(function() {
+  document.body.style.backgroundImage = "url('images/flowers.jpg')";
+  setTimeout(function() {
+  document.body.style.backgroundImage = "url('images/pole.jpg')";
+  }, 1000);
+  }, m);
+  }
+  function stopAnimation() {
+  clearInterval(animationTimer);
+  clearInterval(animationTimer2);
+  setTimeout(function() {
+  startAnimation();
+  }, 10000);
+  }
+  startAnimation();
+  document.addEventListener("mousemove", stopAnimation);
+  document.addEventListener("mousedown", stopAnimation);
+  document.addEventListener("keypress", stopAnimation);
+  document.addEventListener("scroll", stopAnimation);
